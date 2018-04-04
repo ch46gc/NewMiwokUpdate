@@ -4,6 +4,7 @@ package com.example.android.miwok;
  * Created by geohi on 3/6/2018.
  */
 
+
 /**
   * {@link Word} represents a vocabulary word that the user wants to learn.
   * It contains a default translation and a Miwok translation for that word.
@@ -22,12 +23,24 @@ public class Word {
      */
     private String mMiwokTranslation;
 
-    /** Audio resource ID for the word */
+    /**
+     * Audio resource ID for the word
+     */
     private int mAudioResourceId;
     /**
      * Image resource ID for the word
      */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mAudioResourceId=" + mAudioResourceId +
+                ", mImageResourceId=" + mImageResourceId +
+                '}';
+    }
 
     /**
      * Constant value that represents no image was provided for this word
@@ -37,10 +50,11 @@ public class Word {
 
     /**
      * Create a new Word object.
+     *
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
-     *  @param audioResourceId is the resource ID for the audio file associated with this word
+     * @param audioResourceId    is the resource ID for the audio file associated with this word
      */
     public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
@@ -95,4 +109,6 @@ public class Word {
     public int getAudioResourceId() {
         return mAudioResourceId;
     }
+
 }
+
